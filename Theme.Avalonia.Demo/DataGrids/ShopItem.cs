@@ -1,12 +1,12 @@
-﻿using Theme.Avalonia.MVVM;
+using Theme.Avalonia.Demo.MVVM;
 
-namespace Theme.Avalonia.DataGrids
+namespace Theme.Avalonia.Demo.DataGrids
 {
     public class ShopItem : BaseViewModel
     {
-        private string name;
+        private string name = string.Empty;
         private double price;
-        private string description;
+        private string description = string.Empty;
 
         public string Name
         {

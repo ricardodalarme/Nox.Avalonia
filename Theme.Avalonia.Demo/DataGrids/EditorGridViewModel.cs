@@ -1,6 +1,6 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 
-namespace Theme.Avalonia.DataGrids
+namespace Theme.Avalonia.Demo.DataGrids
 {
     public class EditorGridViewModel
     {

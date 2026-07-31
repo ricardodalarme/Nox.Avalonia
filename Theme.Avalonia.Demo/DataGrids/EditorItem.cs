@@ -1,10 +1,10 @@
-﻿using Theme.Avalonia.MVVM;
+using Theme.Avalonia.Demo.MVVM;
 
-namespace Theme.Avalonia.DataGrids
+namespace Theme.Avalonia.Demo.DataGrids
 {
     public class EditorItem : BaseViewModel
     {
-        private string name;
+        private string name = string.Empty;
         private bool isVisible;
         private bool isEnabled;
 
@@ -14,8 +14,6 @@ namespace Theme.Avalonia.DataGrids
             set => this.RaisePropertyChanged(ref this.name, value);
         }
 
-        // Not exactly MVVM-friendly but meh.
-        // Could always replace this with a bool and use a BoolToVisibility converter in the UI
         public bool IsVisible
         {
             get => this.isVisible;

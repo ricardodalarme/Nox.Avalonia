@@ -1,17 +1,17 @@
-<UserControl x:Class="Theme.Avalonia.Views.MainView"
+<UserControl x:Class="Theme.Avalonia.Demo.Views.MainView"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:avalonia="clr-namespace:Theme.Avalonia"
-             xmlns:c="clr-namespace:Theme.Avalonia.Themes.Controls"
+             xmlns:demo="clr-namespace:Theme.Avalonia.Demo"
+             xmlns:c="clr-namespace:Theme.Avalonia.Themes.Controls;assembly=Theme.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:DataType="avalonia:MainViewModel"
+             x:DataType="demo:MainViewModel"
              Background="{DynamicResource Window.Static.Background}">
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <avalonia:MainViewModel/>
+        <demo:MainViewModel/>
     </Design.DataContext>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -128,7 +128,7 @@
         <Grid ColumnDefinitions="400,2,3*,2,4*">
             <c:GroupBox Header="A GroupBox Here... with things inside" Margin="0,0,2,0">
                 <StackPanel>
-                    <Button Command="{Binding AddContentCommand}" Content="A Button Here" Height="50" Margin="5" FontFamily="{StaticResource VGA8X16}"/>
+                    <Button Command="{Binding AddContentCommand}" Content="A Button Here" Height="50" Margin="5" FontFamily="{StaticResource ASCII8X16}"/>
                     <ToggleButton Content="A toggle button" Height="40" Margin="5" IsChecked="{Binding ElementName=CheckBox1, Path=IsChecked, Mode=TwoWay}"/>
                     <CheckBox Content="A CheckBox Here" Margin="5" x:Name="CheckBox1"/>
                     <CheckBox Content="A CheckBox Here" Margin="5"/>

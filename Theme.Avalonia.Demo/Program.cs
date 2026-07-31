@@ -1,8 +1,7 @@
-﻿using System;
-using System.Reflection;
+using System;
 using Avalonia;
 
-namespace Theme.Avalonia;
+namespace Theme.Avalonia.Demo;
 
 class Program
 {

@@ -1,9 +1,9 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Theme.Avalonia.DataGrids;
-using Theme.Avalonia.MVVM;
+using Theme.Avalonia.Demo.DataGrids;
+using Theme.Avalonia.Demo.MVVM;
 
-namespace Theme.Avalonia;
+namespace Theme.Avalonia.Demo;
 
 public class MainViewModel : BaseViewModel
 {
