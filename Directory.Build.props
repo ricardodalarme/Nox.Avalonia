@@ -1,0 +1,33 @@
+<Project>
+  <PropertyGroup>
+    <!-- Versioning & Ownership -->
+    <Version>1.0.0</Version>
+    <Authors>Ricardo Dalarme</Authors>
+    <Company>Nox</Company>
+    <Copyright>Copyright (c) 2026 Ricardo Dalarme</Copyright>
+
+    <!-- Licensing & Repository Links -->
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/ricardodalarme/Nox.Avalonia</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ricardodalarme/Nox.Avalonia</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>avalonia;theme;dark-theme;game-engine;game-editor;ide;docking;datagrid;propertygrid;net10</PackageTags>
+
+    <!-- Embedded Assets -->
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>preview.png</PackageIcon>
+
+    <!-- SourceLink & Symbol Package (.snupkg) Best Practices -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+
+  <!-- Include README and preview icon in all packed NuGet packages -->
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)preview.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+</Project>

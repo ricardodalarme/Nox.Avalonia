@@ -1,0 +1,45 @@
+name: Publish Packages
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+          source-url: https://nuget.pkg.github.com/ricardodalarme/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build Solution
+        run: dotnet build Nox.slnx -c Release
+
+      - name: Create NuGet Packages
+        run: dotnet pack Nox.slnx -c Release -o ./artifacts/nupkgs
+
+      - name: NuGet Login
+        id: login
+        uses: NuGet/login@v1
+        with:
+          user: ricardodalarme
+
+      - name: Push to NuGet.org
+        run: dotnet nuget push ./artifacts/nupkgs/*.nupkg --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+
+      - name: Push to GitHub Packages
+        run: dotnet nuget push ./artifacts/nupkgs/*.nupkg --source https://nuget.pkg.github.com/ricardodalarme/index.json --skip-duplicate
