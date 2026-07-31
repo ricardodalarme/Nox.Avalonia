@@ -1,0 +1,26 @@
+<Project>
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <LangVersion>latest</LangVersion>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Authors>Ricardo Dalarme, REghZy</Authors>
+        <Description>Modern Dark Theme library for Avalonia UI applications.</Description>
+        <RepositoryUrl>https://github.com/AngryCarrot789/WPFDarkTheme</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/AngryCarrot789/WPFDarkTheme</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageTags>avalonia;avaloniaui;theme;dark-theme;controls;xaml;ui</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\..\README.md" Pack="true" PackagePath="\" Link="Properties\README.md" />
+        <None Include="..\..\LICENSE" Pack="true" PackagePath="\" Link="Properties\LICENSE" />
+    </ItemGroup>
+</Project>

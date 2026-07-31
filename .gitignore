@@ -15,6 +15,9 @@
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
+artifacts/
+*.nupkg
+*.snupkg
 x64/
 x86/
 bld/

@@ -1,31 +1,53 @@
-# Avalonia Theme Library
+# Theme.Avalonia
 
-I started making this so that me, or anyone really, can easily have a nice looking theme on their program without needing to write any extra code.
-Here's a preview of the available themes:
+A modern, sleek dark theme library for Avalonia UI applications targeting **.NET 10**.
 
-![](theme-previews.png)
+## Features
+
+- **Modern Avalonia Theme Architecture**: Built on Avalonia 11+ `Styles` and `ThemeDictionaries`.
+- **Easy One-Line Setup**: Simply include `<theme:SoftDarkTheme />` in your `App.axaml`.
+- **Central Package Management (CPM)**: Clean dependency management for .NET 10 solutions.
+- **XML Solution Format**: Uses `.slnx` for concise solution management.
 
 ---
 
-# Using the themes
+## Installation
 
-Add the theme styles to your `App.axaml`:
+Add the `Theme.Avalonia` package to your project:
 
-```xml
-<Application.Styles>
-    <StyleInclude Source="Themes/Controls.axaml"/>
-</Application.Styles>
-
-<Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.MergedDictionaries>
-            <MergeResourceInclude Source="Themes/Colours/SoftDark.axaml"/>
-            <MergeResourceInclude Source="Themes/ControlColours.axaml"/>
-        </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-</Application.Resources>
+```bash
+dotnet add package Theme.Avalonia
 ```
 
 ---
 
-# Using the avalonia themes
+## Quick Start
+
+Register the theme in your `App.axaml`:
+
+```xml
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:theme="clr-namespace:Theme.Avalonia;assembly=Theme.Avalonia"
+             x:Class="YourApp.App"
+             RequestedThemeVariant="Dark">
+    <Application.Styles>
+        <SimpleTheme/>
+        <theme:SoftDarkTheme />
+    </Application.Styles>
+</Application>
+```
+
+---
+
+## Repository Structure
+
+- `src/Theme.Avalonia`: Core Avalonia Theme library.
+- `demo/Theme.Avalonia.Demo`: Sample application demonstrating controls and theme usage.
+- `Themes.slnx`: Solution file using the .NET XML solution persistence model.
+
+---
+
+## License
+
+[MIT License](LICENSE)
