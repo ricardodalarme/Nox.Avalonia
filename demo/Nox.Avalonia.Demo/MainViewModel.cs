@@ -7,11 +7,19 @@ namespace Nox.Avalonia.Demo;
 
 public class MainViewModel : BaseViewModel
 {
+    private int numericValue = 42;
+
     public DataGridViewModel DataGridViewModel { get; }
 
     public EditorGridViewModel EditorGridViewModel { get; }
 
     public ObservableCollection<string> SomeItems { get; }
+
+    public int NumericValue
+    {
+        get => this.numericValue;
+        set => this.RaisePropertyChanged(ref this.numericValue, value);
+    }
 
     public ICommand AddContentCommand { get; set; }
 
