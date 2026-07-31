@@ -15,6 +15,10 @@
         <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
     </Style>
 
+    <Style Selector="pgc|PropertyGrid Grid#SplitterGrid">
+        <Setter Property="Background" Value="{DynamicResource DataGrid.HeaderItem.Static.Background}" />
+    </Style>
+
     <Style Selector="pgc|PropertyGrid TextBox#PART_SearchTextBox, pgc|PropertyGrid TextBox">
         <Setter Property="Background" Value="{DynamicResource TextBox.Static.Background}" />
         <Setter Property="BorderBrush" Value="{DynamicResource TextBox.Static.Border}" />

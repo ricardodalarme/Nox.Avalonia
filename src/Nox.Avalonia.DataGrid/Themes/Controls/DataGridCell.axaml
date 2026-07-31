@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ControlTheme x:Key="DataGridCellTextBlockTheme" TargetType="TextBlock">
         <Setter Property="Margin" Value="4,2" />
         <Setter Property="VerticalAlignment" Value="Center" />
@@ -15,7 +15,7 @@
     </ControlTheme>
 
     <ControlTheme x:Key="{x:Type DataGridCell}" TargetType="DataGridCell">
-        <Setter Property="Background" Value="{DynamicResource DataGrid.CellItem.Static.Background}" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="MinHeight" Value="24" />
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
