@@ -4,7 +4,6 @@
              x:Class="Nox.Avalonia.Demo.App"
              RequestedThemeVariant="Dark">
     <Application.Styles>
-        <SimpleTheme/>
         <nox:NoxTheme />
     </Application.Styles>
 </Application>

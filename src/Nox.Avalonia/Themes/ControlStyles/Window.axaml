@@ -12,10 +12,7 @@
                     <Border x:Name="PART_TransparencyFallback" IsHitTestVisible="False"/>
                     <Border Background="{TemplateBinding Background}" IsHitTestVisible="False"/>
                     <Panel Margin="{TemplateBinding WindowDecorationMargin}" Background="Transparent"/>
-                    <VisualLayerManager>
-                        <VisualLayerManager.ChromeOverlayLayer>
-                            <TitleBar/>
-                        </VisualLayerManager.ChromeOverlayLayer>
+                    <VisualLayerManager x:Name="PART_VisualLayerManager">
                         <ContentPresenter x:Name="PART_ContentPresenter"
                                           Margin="{TemplateBinding Padding}"
                                           HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
