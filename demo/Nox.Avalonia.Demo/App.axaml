@@ -1,10 +1,11 @@
-<Application xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:nox="clr-namespace:Nox.Avalonia;assembly=Nox.Avalonia"
-             xmlns:noxdg="clr-namespace:Nox.Avalonia.DataGrid;assembly=Nox.Avalonia.DataGrid"
-             xmlns:noxpg="clr-namespace:Nox.Avalonia.PropertyGrid;assembly=Nox.Avalonia.PropertyGrid"
-             x:Class="Nox.Avalonia.Demo.App"
-             RequestedThemeVariant="Dark">
+﻿<Application
+    x:Class="Nox.Avalonia.Demo.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:nox="clr-namespace:Nox.Avalonia;assembly=Nox.Avalonia"
+    xmlns:noxdg="clr-namespace:Nox.Avalonia.DataGrid;assembly=Nox.Avalonia.DataGrid"
+    xmlns:noxpg="clr-namespace:Nox.Avalonia.PropertyGrid;assembly=Nox.Avalonia.PropertyGrid"
+    RequestedThemeVariant="Dark">
     <Application.Styles>
         <nox:NoxTheme />
         <noxdg:NoxDataGridTheme />

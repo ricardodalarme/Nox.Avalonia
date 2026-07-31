@@ -1,43 +1,44 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ControlTheme x:Key="{x:Type NumericUpDown}" TargetType="{x:Type NumericUpDown}">
-        <Setter Property="Background" Value="{DynamicResource TextBox.Static.Background}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource TextBox.Static.Border}"/>
-        <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="CornerRadius" Value="0"/>
-        <Setter Property="Padding" Value="2,0"/>
-        <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="{DynamicResource TextBox.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TextBox.Static.Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Padding" Value="2,0" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Template">
             <ControlTemplate TargetType="{x:Type NumericUpDown}">
-                <ButtonSpinner x:Name="PART_Spinner"
-                               Background="{TemplateBinding Background}"
-                               BorderBrush="{TemplateBinding BorderBrush}"
-                               BorderThickness="{TemplateBinding BorderThickness}"
-                               CornerRadius="{TemplateBinding CornerRadius}"
-                               Padding="0"
-                               HorizontalContentAlignment="Stretch"
-                               VerticalContentAlignment="Stretch"
-                               AllowSpin="{TemplateBinding AllowSpin}"
-                               ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}"
-                               ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}">
-                    <TextBox x:Name="PART_TextBox"
-                             Background="Transparent"
-                             BorderThickness="0"
-                             Margin="0"
-                             Padding="{TemplateBinding Padding}"
-                             HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                             VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                             Foreground="{TemplateBinding Foreground}"
-                             Text="{TemplateBinding Text}"
-                             AcceptsReturn="False"
-                             PlaceholderText="{TemplateBinding Watermark}"/>
+                <ButtonSpinner
+                    x:Name="PART_Spinner"
+                    Padding="0"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch"
+                    AllowSpin="{TemplateBinding AllowSpin}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    ButtonSpinnerLocation="{TemplateBinding ButtonSpinnerLocation}"
+                    CornerRadius="{TemplateBinding CornerRadius}"
+                    ShowButtonSpinner="{TemplateBinding ShowButtonSpinner}">
+                    <TextBox
+                        x:Name="PART_TextBox"
+                        Margin="0"
+                        Padding="{TemplateBinding Padding}"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                        AcceptsReturn="False"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Foreground="{TemplateBinding Foreground}"
+                        PlaceholderText="{TemplateBinding Watermark}"
+                        Text="{TemplateBinding Text}" />
                 </ButtonSpinner>
             </ControlTemplate>
         </Setter>
         <Style Selector="^:disabled /template/ ButtonSpinner#PART_Spinner">
-            <Setter Property="Opacity" Value="0.56"/>
+            <Setter Property="Opacity" Value="0.56" />
         </Style>
     </ControlTheme>
 </ResourceDictionary>

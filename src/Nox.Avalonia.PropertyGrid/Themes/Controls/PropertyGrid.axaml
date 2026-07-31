@@ -1,6 +1,7 @@
-<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:pgc="clr-namespace:Avalonia.PropertyGrid.Controls;assembly=Avalonia.PropertyGrid">
+﻿<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:pgc="clr-namespace:Avalonia.PropertyGrid.Controls;assembly=Avalonia.PropertyGrid">
 
     <Style Selector="pgc|PropertyGrid">
         <Setter Property="Background" Value="{DynamicResource ListBox.Static.Background}" />
@@ -34,7 +35,7 @@
         <Setter Property="BorderBrush" Value="{DynamicResource Button.MouseOver.Border}" />
     </Style>
 
-    <!-- Flatten all rounded components and filter buttons -->
+    <!--  Flatten all rounded components and filter buttons  -->
     <Style Selector="pgc|PropertyGrid ToggleButton">
         <Setter Property="CornerRadius" Value="0" />
     </Style>

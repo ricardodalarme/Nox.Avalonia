@@ -1,12 +1,14 @@
-<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ControlTheme x:Key="DataGridCellTextBlockTheme" TargetType="TextBlock">
         <Setter Property="Margin" Value="4,2" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="TextWrapping" Value="Wrap" />
     </ControlTheme>
 
-    <ControlTheme x:Key="DataGridCellTextBoxTheme" BasedOn="{StaticResource {x:Type TextBox}}" TargetType="TextBox">
+    <ControlTheme
+        x:Key="DataGridCellTextBoxTheme"
+        BasedOn="{StaticResource {x:Type TextBox}}"
+        TargetType="TextBox">
         <Setter Property="VerticalAlignment" Value="Stretch" />
         <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="MinHeight" Value="20" />
@@ -18,42 +20,48 @@
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Template">
             <ControlTemplate>
-                <Border Name="CellBorder"
-                        Background="{TemplateBinding Background}"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="{TemplateBinding CornerRadius}">
+                <Border
+                    Name="CellBorder"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
                     <Grid Name="PART_CellRoot" ColumnDefinitions="*,Auto">
-                        <Rectangle Name="CurrencyVisual"
-                                   Grid.Column="0"
-                                   Fill="Transparent"
-                                   IsHitTestVisible="False"
-                                   IsVisible="False"
-                                   Stroke="{DynamicResource ABrush.Tone8.Border.Selected}"
-                                   StrokeThickness="1" />
-                        <Panel Name="FocusVisual"
-                               Grid.Column="0"
-                               IsHitTestVisible="False"
-                               IsVisible="False">
-                            <Rectangle Margin="1"
-                                       Fill="Transparent"
-                                       IsHitTestVisible="False"
-                                       Stroke="{DynamicResource ABrush.Tone8.Border.Selected}"
-                                       StrokeThickness="1" />
+                        <Rectangle
+                            Name="CurrencyVisual"
+                            Grid.Column="0"
+                            Fill="Transparent"
+                            IsHitTestVisible="False"
+                            IsVisible="False"
+                            Stroke="{DynamicResource ABrush.Tone8.Border.Selected}"
+                            StrokeThickness="1" />
+                        <Panel
+                            Name="FocusVisual"
+                            Grid.Column="0"
+                            IsHitTestVisible="False"
+                            IsVisible="False">
+                            <Rectangle
+                                Margin="1"
+                                Fill="Transparent"
+                                IsHitTestVisible="False"
+                                Stroke="{DynamicResource ABrush.Tone8.Border.Selected}"
+                                StrokeThickness="1" />
                         </Panel>
 
-                        <ContentPresenter Grid.Column="0"
-                                          Margin="{TemplateBinding Padding}"
-                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                          Content="{TemplateBinding Content}"
-                                          ContentTemplate="{TemplateBinding ContentTemplate}"
-                                          Foreground="{TemplateBinding Foreground}" />
+                        <ContentPresenter
+                            Grid.Column="0"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            Foreground="{TemplateBinding Foreground}" />
 
-                        <Rectangle Name="PART_RightGridLine"
-                                   Grid.Column="1"
-                                   Width="1"
-                                   Fill="{DynamicResource DataGrid.VerticalSeparatorBrush}" />
+                        <Rectangle
+                            Name="PART_RightGridLine"
+                            Grid.Column="1"
+                            Width="1"
+                            Fill="{DynamicResource DataGrid.VerticalSeparatorBrush}" />
                     </Grid>
                 </Border>
             </ControlTemplate>

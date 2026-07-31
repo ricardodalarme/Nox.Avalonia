@@ -1,6 +1,7 @@
-<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:pgc="clr-namespace:Avalonia.PropertyGrid.Controls;assembly=Avalonia.PropertyGrid">
+﻿<Styles
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:pgc="clr-namespace:Avalonia.PropertyGrid.Controls;assembly=Avalonia.PropertyGrid">
 
     <Style Selector="pgc|PropertyGrid Border.category-header, pgc|PropertyGrid Border#PART_CategoryHeader">
         <Setter Property="Background" Value="{DynamicResource GroupBox.Header.Static.Background}" />

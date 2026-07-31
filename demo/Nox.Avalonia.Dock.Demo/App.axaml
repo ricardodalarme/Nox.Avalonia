@@ -1,9 +1,10 @@
-<Application xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:nox="clr-namespace:Nox.Avalonia;assembly=Nox.Avalonia"
-             xmlns:dock="clr-namespace:Nox.Avalonia.Dock;assembly=Nox.Avalonia.Dock"
-             x:Class="Nox.Avalonia.Dock.Demo.App"
-             RequestedThemeVariant="Dark">
+﻿<Application
+    x:Class="Nox.Avalonia.Dock.Demo.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dock="clr-namespace:Nox.Avalonia.Dock;assembly=Nox.Avalonia.Dock"
+    xmlns:nox="clr-namespace:Nox.Avalonia;assembly=Nox.Avalonia"
+    RequestedThemeVariant="Dark">
     <Application.Styles>
         <nox:NoxTheme />
         <dock:DockNoxTheme />
