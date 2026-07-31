@@ -1,0 +1,50 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pgc="clr-namespace:Avalonia.PropertyGrid.Controls;assembly=Avalonia.PropertyGrid">
+
+    <Style Selector="pgc|PropertyGrid ComboBox">
+        <Setter Property="Margin" Value="2,1" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid TextBox">
+        <Setter Property="Margin" Value="2,1" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid NumericUpDown">
+        <Setter Property="Margin" Value="2,1" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid CheckBox">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="4,0" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid Slider">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="4,0" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid RadioButton">
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid ToggleButton">
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid ToggleButton:checked">
+        <Setter Property="Background" Value="{DynamicResource Item.SelectedActive.Background}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Item.SelectedActive.Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid PathIcon">
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.Glyph.Static}" />
+    </Style>
+</Styles>

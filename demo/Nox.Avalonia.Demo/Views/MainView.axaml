@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:demo="clr-namespace:Nox.Avalonia.Demo"
              xmlns:c="clr-namespace:Nox.Avalonia.Themes.Controls;assembly=Nox.Avalonia"
+             xmlns:apc="clr-namespace:Avalonia.PropertyGrid.Controls;assembly=Avalonia.PropertyGrid"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:DataType="demo:MainViewModel"
              Background="{DynamicResource Window.Static.Background}">
@@ -300,6 +301,11 @@
                                     </ListBox>
                                     <Label Margin="5 5 5 0" Content="ListView below"/>
                                 </StackPanel>
+                            </TabItem>
+                            <TabItem Header="PropertyGrid">
+                                <ScrollViewer Height="300" VerticalScrollBarVisibility="Auto">
+                                    <apc:PropertyGrid DataContext="{Binding Settings}" Margin="5"/>
+                                </ScrollViewer>
                             </TabItem>
                             <TabItem Header="Tab3 eee"/>
                             <TabItem Header="Tab4 eee"/>

@@ -13,6 +13,7 @@
         <PackageReference Include="Avalonia.Desktop" />
         <PackageReference Include="Avalonia.Controls.DataGrid" />
         <PackageReference Include="Avalonia.Fonts.Inter" />
+        <PackageReference Include="bodong.Avalonia.PropertyGrid" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="AvaloniaUI.DiagnosticsSupport" />
     </ItemGroup>
@@ -20,5 +21,6 @@
     <ItemGroup>
         <ProjectReference Include="..\..\src\Nox.Avalonia\Nox.Avalonia.csproj" />
         <ProjectReference Include="..\..\src\Nox.Avalonia.DataGrid\Nox.Avalonia.DataGrid.csproj" />
+        <ProjectReference Include="..\..\src\Nox.Avalonia.PropertyGrid\Nox.Avalonia.PropertyGrid.csproj" />
     </ItemGroup>
 </Project>

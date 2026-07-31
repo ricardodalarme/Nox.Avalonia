@@ -1,0 +1,24 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pgc="clr-namespace:Avalonia.PropertyGrid.Controls;assembly=Avalonia.PropertyGrid">
+
+    <Style Selector="pgc|PropertyGrid Border.category-header, pgc|PropertyGrid Border#PART_CategoryHeader">
+        <Setter Property="Background" Value="{DynamicResource GroupBox.Header.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource GroupBox.Header.Static.Border}" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="Padding" Value="6,4" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid TextBlock.category-name, pgc|PropertyGrid TextBlock#PART_CategoryName">
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{DynamicResource GroupBox.Header.Foreground}" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid Expander">
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+</Styles>

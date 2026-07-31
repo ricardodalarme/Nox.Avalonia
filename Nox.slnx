@@ -15,4 +15,5 @@
     <Project Path="src/Nox.Avalonia/Nox.Avalonia.csproj" />
     <Project Path="src/Nox.Avalonia.DataGrid/Nox.Avalonia.DataGrid.csproj" />
     <Project Path="src/Nox.Avalonia.Dock/Nox.Avalonia.Dock.csproj" />
+    <Project Path="src/Nox.Avalonia.PropertyGrid/Nox.Avalonia.PropertyGrid.csproj" />
 </Solution>

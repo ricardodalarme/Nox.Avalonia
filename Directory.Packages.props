@@ -21,5 +21,9 @@
     <PackageVersion Include="Dock.Model" Version="$(DockVersion)" />
     <PackageVersion Include="Dock.Model.Mvvm" Version="$(DockVersion)" />
     <PackageVersion Include="Dock.Avalonia.Themes.Simple" Version="$(DockVersion)" />
+
+    <!-- PropertyGrid dependencies -->
+    <PackageVersion Include="bodong.Avalonia.PropertyGrid" Version="12.0.4.1" />
+    <PackageVersion Include="bodong.PropertyModels" Version="12.0.0" />
   </ItemGroup>
 </Project>

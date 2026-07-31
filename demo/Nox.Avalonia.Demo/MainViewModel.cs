@@ -13,6 +13,8 @@ public class MainViewModel : BaseViewModel
 
     public EditorGridViewModel EditorGridViewModel { get; }
 
+    public Models.SampleSettings Settings { get; } = new();
+
     public ObservableCollection<string> SomeItems { get; }
 
     public int NumericValue

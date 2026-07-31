@@ -1,0 +1,6 @@
+<Styles xmlns="https://github.com/avaloniaui">
+    <StyleInclude Source="PropertyGrid.axaml" />
+    <StyleInclude Source="PropertyGridCategory.axaml" />
+    <StyleInclude Source="PropertyGridCell.axaml" />
+    <StyleInclude Source="PropertyEditors.axaml" />
+</Styles>

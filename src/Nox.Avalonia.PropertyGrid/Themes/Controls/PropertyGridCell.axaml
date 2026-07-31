@@ -1,0 +1,20 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:pgc="clr-namespace:Avalonia.PropertyGrid.Controls;assembly=Avalonia.PropertyGrid">
+
+    <Style Selector="pgc|PropertyGrid TextBlock.property-name">
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid TextBlock.property-unit">
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.AccentTone1.Border.Static}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="4,0,0,0" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid GridSplitter">
+        <Setter Property="Background" Value="{DynamicResource PanelBorderBrush}" />
+        <Setter Property="Width" Value="1" />
+    </Style>
+</Styles>

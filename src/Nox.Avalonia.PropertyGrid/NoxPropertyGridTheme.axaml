@@ -1,0 +1,22 @@
+<Styles x:Class="Nox.Avalonia.PropertyGrid.NoxPropertyGridTheme"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://Nox.Avalonia/Themes/Colours/SoftDark.axaml" />
+                <ResourceInclude Source="avares://Nox.Avalonia/Themes/ControlColours.axaml" />
+                <ResourceInclude Source="avares://Nox.Avalonia/Themes/ControlStyles/ButtonSpinner.axaml" />
+                <ResourceInclude Source="avares://Nox.Avalonia/Themes/ControlStyles/NumericUpDown.axaml" />
+                <ResourceInclude Source="avares://Nox.Avalonia/Themes/ControlStyles/ComboBox.axaml" />
+                <ResourceInclude Source="avares://Nox.Avalonia/Themes/ControlStyles/ComboBoxItem.axaml" />
+                <ResourceInclude Source="avares://Nox.Avalonia/Themes/ControlStyles/TextBox.axaml" />
+                <ResourceInclude Source="avares://Nox.Avalonia/Themes/ControlStyles/Button.axaml" />
+                <ResourceInclude Source="avares://Nox.Avalonia/Themes/ControlStyles/CheckBox.axaml" />
+                <ResourceInclude Source="avares://Nox.Avalonia/Themes/ControlStyles/Slider.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <StyleInclude Source="avares://Nox.Avalonia.PropertyGrid/Themes/Controls/_index.axaml" />
+</Styles>
