@@ -1,0 +1,10 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="DockThemeBackgroundBrush" Color="{DynamicResource AColour.Tone4.Background.Static}" />
+    <SolidColorBrush x:Key="DockThemeBorderLowBrush" Color="{DynamicResource AColour.Tone6.Border.Static}" />
+    <SolidColorBrush x:Key="DockThemeBorderHighBrush" Color="{DynamicResource AColour.Tone7.Border.Static}" />
+    <SolidColorBrush x:Key="DockThemeControlMidBrush" Color="{DynamicResource AColour.Tone5.Background.Static}" />
+    <SolidColorBrush x:Key="DockThemeControlHighBrush" Color="{DynamicResource AColour.Tone6.Background.Static}" />
+    <SolidColorBrush x:Key="DockApplicationAccentBrush" Color="{DynamicResource AColour.Tone8.Border.Selected}" />
+    <SolidColorBrush x:Key="DockThemeForegroundBrush" Color="{DynamicResource AColour.Foreground.Static}" />
+</ResourceDictionary>

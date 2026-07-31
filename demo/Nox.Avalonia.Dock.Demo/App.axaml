@@ -1,0 +1,11 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:nox="clr-namespace:Nox.Avalonia;assembly=Nox.Avalonia"
+             xmlns:dock="clr-namespace:Nox.Avalonia.Dock;assembly=Nox.Avalonia.Dock"
+             x:Class="Nox.Avalonia.Dock.Demo.App"
+             RequestedThemeVariant="Dark">
+    <Application.Styles>
+        <nox:NoxTheme />
+        <dock:DockNoxTheme />
+    </Application.Styles>
+</Application>

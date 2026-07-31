@@ -1,6 +1,7 @@
 <Solution>
     <Folder Name="/Demo/">
         <Project Path="demo/Nox.Avalonia.Demo/Nox.Avalonia.Demo.csproj" />
+        <Project Path="demo/Nox.Avalonia.Dock.Demo/Nox.Avalonia.Dock.Demo.csproj" />
     </Folder>
     <Folder Name="/Solution Items/">
         <File Path="Directory.Packages.props" />
@@ -13,4 +14,5 @@
     </Folder>
     <Project Path="src/Nox.Avalonia/Nox.Avalonia.csproj" />
     <Project Path="src/Nox.Avalonia.DataGrid/Nox.Avalonia.DataGrid.csproj" />
+    <Project Path="src/Nox.Avalonia.Dock/Nox.Avalonia.Dock.csproj" />
 </Solution>

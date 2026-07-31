@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:Nox.Avalonia.Dock.Demo.ViewModels"
+        x:Class="Nox.Avalonia.Dock.Demo.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Nox.Avalonia Dock Demo"
+        Width="1280" Height="720">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+
+    <Grid RowDefinitions="Auto,*">
+        <Menu Grid.Row="0">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem Header="_Reset Layout" />
+            </MenuItem>
+        </Menu>
+
+        <DockControl Grid.Row="1" Layout="{Binding Layout}" />
+    </Grid>
+</Window>

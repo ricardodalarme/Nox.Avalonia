@@ -1,0 +1,15 @@
+<Styles x:Class="Nox.Avalonia.Dock.DockNoxTheme"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:simple="clr-namespace:Dock.Avalonia.Themes.Simple;assembly=Dock.Avalonia.Themes.Simple">
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceInclude x:Key="Default" Source="avares://Nox.Avalonia.Dock/Themes/Dark.axaml" />
+                <ResourceInclude x:Key="Dark" Source="avares://Nox.Avalonia.Dock/Themes/Dark.axaml" />
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <simple:DockSimpleTheme />
+</Styles>
