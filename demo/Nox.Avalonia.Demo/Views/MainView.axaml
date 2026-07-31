@@ -168,52 +168,38 @@
         </Menu>
         <Grid ColumnDefinitions="400,2,3*,2,4*">
             <c:GroupBox Margin="0,0,2,0" Header="A GroupBox Here... with things inside">
-                <StackPanel>
+                <StackPanel Margin="5" Spacing="5">
                     <Button
                         Height="50"
-                        Margin="5"
                         Command="{Binding AddContentCommand}"
                         Content="A Button Here" />
                     <ToggleButton
                         Height="40"
-                        Margin="5"
                         Content="A toggle button"
                         IsChecked="{Binding ElementName=CheckBox1, Path=IsChecked, Mode=TwoWay}" />
-                    <CheckBox
-                        x:Name="CheckBox1"
-                        Margin="5"
-                        Content="A CheckBox Here" />
-                    <CheckBox Margin="5" Content="A CheckBox Here" />
-                    <RadioButton Margin="5" Content="A RadioButton Here" />
-                    <RadioButton Margin="5" Content="A RadioButton Here" />
-                    <RadioButton Margin="5" Content="A RadioButton Here" />
-                    <ButtonSpinner />
-                    <StackPanel Margin="5" Spacing="4">
-                        <TextBlock Text="NumericUpDown" />
-                        <NumericUpDown
-                            Increment="5"
-                            Maximum="100"
-                            Minimum="0"
-                            Value="{Binding NumericValue}" />
-                        <TextBlock Text="{Binding NumericValue, StringFormat='Selected value: {0}'}" />
-                    </StackPanel>
+                    <CheckBox x:Name="CheckBox1" Content="A CheckBox Here" />
+                    <CheckBox Content="A CheckBox Here" />
+                    <RadioButton Content="A RadioButton Here" />
+                    <RadioButton Content="A RadioButton Here" />
+                    <RadioButton Content="A RadioButton Here" />
+                    <NumericUpDown
+                        Increment="5"
+                        Maximum="100"
+                        Minimum="0"
+                        Value="{Binding NumericValue}" />
                     <Slider
-                        Margin="5"
                         Maximum="100"
                         Minimum="0"
                         Value="16" />
                     <Slider
-                        Margin="5"
                         Maximum="100"
                         Minimum="0"
                         Value="32" />
                     <Slider
-                        Margin="5"
                         Maximum="100"
                         Minimum="0"
                         Value="64" />
                     <Slider
-                        Margin="5"
                         Maximum="100"
                         Minimum="0"
                         Value="100" />
@@ -245,12 +231,12 @@
                 Margin="2,0,3,0"
                 Header="A group box!!">
                 <Grid>
-                    <StackPanel>
-                        <Label Margin="5,5,5,0" Content="A Label here" />
-                        <Label Margin="5,5,5,5" Content="Another Label here" />
+                    <StackPanel Margin="5" Spacing="5">
+                        <Label Content="A Label here" />
+                        <Label Content="Another Label here" />
                         <Separator />
-                        <Label Margin="5,5,5,0" Content="ListVBox below" />
-                        <ListBox Height="200" Margin="5,0,5,0">
+                        <Label Content="ListVBox below" />
+                        <ListBox Height="200">
                             <ListBoxItem Content="A listboxitem here" />
                             <ListBoxItem Content="Another listboxitem here" />
                             <ListBoxItem Content="1" />
@@ -270,10 +256,7 @@
                             </Grid>
                         </ListBox>
                         <Separator Margin="0,10" />
-                        <apc:PropertyGrid
-                            Height="340"
-                            Margin="5"
-                            DataContext="{Binding Settings}" />
+                        <apc:PropertyGrid Height="340" DataContext="{Binding Settings}" />
                     </StackPanel>
                 </Grid>
             </c:GroupBox>
@@ -283,10 +266,10 @@
                 Margin="3,0,0,0"
                 Header="Another group box!!! A list of some controls">
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
-                    <StackPanel Margin="5">
+                    <StackPanel Margin="5" Spacing="5">
                         <Button Content="eee" />
-                        <CheckBox Margin="0,2,0,2" Content="checkbox" />
-                        <ComboBox Margin="0,0,0,2">
+                        <CheckBox Content="checkbox" />
+                        <ComboBox>
                             <ComboBoxItem Content="A comboboxitem" />
                             <ComboBoxItem Content="A comboboxitem" />
                             <ComboBoxItem Content="A comboboxitem" />
@@ -295,28 +278,25 @@
                         </ComboBox>
                         <ProgressBar
                             Height="12"
-                            Margin="0,0,0,2"
                             IsIndeterminate="True"
                             Maximum="100"
                             Minimum="0"
                             Value="32" />
                         <ProgressBar
                             Height="20"
-                            Margin="0,0,0,2"
                             Maximum="100"
                             Minimum="0"
                             Value="{Binding ElementName=SliderThing, Path=Value}" />
                         <Slider
                             x:Name="SliderThing"
-                            Margin="0,0,0,2"
                             Maximum="100"
                             Minimum="0"
                             Value="61" />
-                        <TextBox Height="64" Margin="0,0,0,2" />
-                        <TabControl Height="550" Margin="0,0,0,2">
+                        <TextBox Height="64" />
+                        <TabControl Height="550">
                             <TabItem Header="Tab1 eee">
                                 <c:GroupBox Header="Things">
-                                    <StackPanel>
+                                    <StackPanel Margin="5" Spacing="5">
                                         <TreeView Margin="5">
                                             <TreeViewItem Header="My shopping list">
                                                 <TreeViewItem Header="Some stuff" />
@@ -342,75 +322,36 @@
                                                 <TreeViewItem Header="extra tree items 2" />
                                             </TreeViewItem>
                                         </TreeView>
-                                        <StackPanel Orientation="Vertical">
+                                        <StackPanel
+                                            Margin="5"
+                                            Orientation="Vertical"
+                                            Spacing="5">
                                             <Calendar />
                                             <DatePicker />
                                         </StackPanel>
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
-                                        <Button
-                                            Height="32"
-                                            Margin="5"
-                                            Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
+                                        <Button Height="32" Content="Button" />
                                     </StackPanel>
                                 </c:GroupBox>
                             </TabItem>
                             <TabItem Header="Tab2 eee">
-                                <StackPanel>
-                                    <Label Margin="5,5,5,0" Content="A Label here" />
-                                    <Label Margin="5,5,5,5" Content="Another Label here" />
+                                <StackPanel Margin="5" Spacing="5">
+                                    <Label Content="A Label here" />
+                                    <Label Content="Another Label here" />
                                     <Separator />
-                                    <Label Margin="5,5,5,0" Content="ListVBox below" />
+                                    <Label Content="ListVBox below" />
                                     <ListBox Height="200" Margin="5,0,5,0">
                                         <ListBoxItem Content="A listboxitem here" />
                                         <ListBoxItem Content="Another listboxitem here" />
@@ -430,7 +371,7 @@
                                             <Button Margin="125,0,0,0" Content="A button" />
                                         </Grid>
                                     </ListBox>
-                                    <Label Margin="5,5,5,0" Content="ListView below" />
+                                    <Label Content="ListView below" />
                                 </StackPanel>
                             </TabItem>
                             <TabItem Header="Tab3 eee" />
