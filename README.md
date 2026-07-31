@@ -11,16 +11,23 @@
 </p>
 
 <p align="center">
-    A comprehensive, sleek, and modern dark theme for <b>Avalonia UI</b> applications!
+    A comprehensive, sleek, and modern theme for <b>Avalonia UI</b> applications!
     <br />
     Designed specifically for <b>Game Engines</b>, <b>Level & Asset Editors</b>, <b>IDEs</b>, and <b>Developer Tools</b>.
 </p>
 
 <p align="center">
-    <img src="preview.png" style="width: 95%;" />
+    <img src="preview.png" style="width: 100%;" />
 </p>
 
----
+### Packages Overview
+
+| Package Name                | Description                                        | Target Framework |
+| --------------------------- | -------------------------------------------------- | ---------------- |
+| `Nox.Avalonia`              | Core theme engine & standard controls              | `net10.0`        |
+| `Nox.Avalonia.Dock`         | Theme extension for `Dock.Avalonia`                | `net10.0`        |
+| `Nox.Avalonia.DataGrid`     | Theme extension for `Avalonia.Controls.DataGrid`   | `net10.0`        |
+| `Nox.Avalonia.PropertyGrid` | Theme extension for `bodong.Avalonia.PropertyGrid` | `net10.0`        |
 
 ### Getting Started
 
@@ -106,33 +113,6 @@ Add `<pg:NoxPropertyGridTheme />` to `App.axaml`:
     </Application.Styles>
 </Application>
 ```
-
-### XML Namespaces
-
-The Nox library exposes clean XML namespaces for XAML integration:
-
-| Prefix | Namespace / Assembly                                                         | Description                                                                                                                       |
-| ------ | ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `nox`  | `clr-namespace:Nox.Avalonia;assembly=Nox.Avalonia`                           | Primary theme for core controls (`Button`, `TextBox`, `ComboBox`, `ListBox`, `GroupBox`, `Expander`, `Slider`, `CheckBox`, etc.). |
-| `dock` | `clr-namespace:Nox.Avalonia.Dock;assembly=Nox.Avalonia.Dock`                 | Docking layout control styles (`DockControl`, document tabs, tool windows, floating windows).                                     |
-| `dg`   | `clr-namespace:Nox.Avalonia.DataGrid;assembly=Nox.Avalonia.DataGrid`         | DataGrid control styles (`DataGrid`, `DataGridColumnHeader`, `DataGridCell`, `DataGridCheckBoxColumn`).                           |
-| `pg`   | `clr-namespace:Nox.Avalonia.PropertyGrid;assembly=Nox.Avalonia.PropertyGrid` | PropertyGrid control styles (`PropertyGrid`, category expanders, property cell editors).                                          |
-
-#### Included Demo Applications
-
-This repository contains 2 interactive reference applications:
-
-- **`Nox.Avalonia.Demo`** (`demo/Nox.Avalonia.Demo`): Showcases all core Nox controls, DataGrid, and PropertyGrid side-by-side in a responsive desktop window. Run with `dotnet run --project demo/Nox.Avalonia.Demo`.
-- **`Nox.Avalonia.Dock.Demo`** (`demo/Nox.Avalonia.Dock.Demo`): Showcases complete docking window manager integration (`DockControl`, document tabs, tool windows, floating windows). Run with `dotnet run --project demo/Nox.Avalonia.Dock.Demo`.
-
-### Packages Overview
-
-| Package Name                | Purpose                                            | Target Framework |
-| --------------------------- | -------------------------------------------------- | ---------------- |
-| `Nox.Avalonia`              | Core theme engine & standard controls              | `net10.0`        |
-| `Nox.Avalonia.Dock`         | Theme extension for `Dock.Avalonia`                | `net10.0`        |
-| `Nox.Avalonia.DataGrid`     | Theme extension for `Avalonia.Controls.DataGrid`   | `net10.0`        |
-| `Nox.Avalonia.PropertyGrid` | Theme extension for `bodong.Avalonia.PropertyGrid` | `net10.0`        |
 
 ### Contributors
 
