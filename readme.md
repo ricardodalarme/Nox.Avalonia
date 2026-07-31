@@ -10,8 +10,6 @@ Here's a preview of the available themes:
 # Using the themes (new)
 For both the new and old versions, you need to reference `PresentationFramework.Aero2.dll` in order for drop shadows to work (and for the app to compile). Right click References in the solution explorer bit, Add Reference, goto Assemblies and double click/include `PresentationFramework.Aero2`
 
-[Click here](#using-the-old-themes) if you want to use the old version which is slightly easier to use but is deprecated
-
 Firstly, add the theme, control colours and controls dictionaries. This assumes that you don't change the folder structure used by this project
 
 ```xml
@@ -30,28 +28,6 @@ Firstly, add the theme, control colours and controls dictionaries. This assumes 
 </Application.Resources>
 ```
 
----
-
-# Using the old themes
-
-This is the first version, where all control styles are defined in the specific theme file (leading to massive files for each theme). While this grants most control over the styles, it's annoying to have to add new styles to all theme files, so this isn't recommended anymore.
-
-If you want to use it anyway, then just drag and drop the theme(s) you want (located in the `ThemesOLD` folder folder) into your project's themes folder.
-
-Inside App.xaml place this: (and replace DarkTheme with whatever theme you want, like LightTheme, ColourfulDarkTheme, etc)
-```xml
-<Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.MergedDictionaries>
-            <ResourceDictionary Source="/ThemesFolder/DarkTheme.xaml"/>
-        </ResourceDictionary.MergedDictionaries>
-    </ResourceDictionary>
-</Application.Resources>
-```
-And then most things like buttons, ListBoxes, etc, will automatically be styled
-
----
-
 ## Window styles
 In your window XAML code (where you define height/width, etc), add:
 ```
@@ -64,7 +40,7 @@ This styles styles the title bar, its buttons, etc. There's also `CustomToolWind
 
 # Update Logs (time is from bottom to top)
 - Reorganised WPF project to make differentiating new Avalonia theme easier (coming soon)
-- Deprecated the old themes (renamed folder to ThemesOLD), and moved to using the new library
+- Moved to using the new library-based themes (removed legacy ThemesOLD folder)
 - Added version 2. I only added dark themes to V2 so far, but i might add a light themes. They are located in the ThemesV2 folder. I made the app use them (in App.xaml, which shows how to install them, i commented out the older version)
 - Made menuitems autostyle, improved the looks of disabled controls (which use a textblock as their content, e.g. buttons or menuitems), and also made the maximize/restore button change based on the window state
 - Finally added a shadow to windows. Also added drop shadows to tooltips, context menus and menuitems. These shadows however do introduct another thing... when resizing the window, a white border apears along the axis youre resizing in. It dissapears as soon as the window has fully re-drawn (aka after you stop resizing). idk how to fix this but tbh its not that big of a deal so it can just be ignored

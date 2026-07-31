@@ -61,19 +61,7 @@
         <Compile Include="DataGrids\EditorItem.cs"/>
         <Compile Include="DataGrids\ShopItem.cs"/>
         <Compile Include="MainViewModel.cs"/>
-        <Compile Include="ThemesOLD\ColourfulDarkTheme.xaml.cs">
-            <DependentUpon>ColourfulDarkTheme.xaml</DependentUpon>
-        </Compile>
-        <Compile Include="ThemesOLD\ColourfulLightTheme.xaml.cs">
-            <DependentUpon>ColourfulLightTheme.xaml</DependentUpon>
-        </Compile>
-        <Compile Include="ThemesOLD\DarkTheme.xaml.cs">
-            <DependentUpon>DarkTheme.xaml</DependentUpon>
-        </Compile>
-        <Compile Include="ThemesOLD\LightTheme.xaml.cs">
-            <DependentUpon>LightTheme.xaml</DependentUpon>
-        </Compile>
-        <Compile Include="ThemesOLD\ThemesController.cs"/>
+
         <Compile Include="Themes\Attached\CornerRadiusHelper.cs"/>
         <Compile Include="Themes\Attached\HorizontalScrolling.cs"/>
         <Compile Include="Themes\Attached\MenuHelper.cs"/>
@@ -107,22 +95,7 @@
             <DependentUpon>MainWindow.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
-        <Page Include="ThemesOLD\ColourfulDarkTheme.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </Page>
-        <Page Include="ThemesOLD\ColourfulLightTheme.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </Page>
-        <Page Include="ThemesOLD\DarkTheme.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </Page>
-        <Page Include="ThemesOLD\LightTheme.xaml">
-            <Generator>MSBuild:Compile</Generator>
-            <SubType>Designer</SubType>
-        </Page>
+
         <Page Include="Themes\ColourDictionaries\DarkGreyTheme.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
@@ -178,7 +151,7 @@
             <Generator>SettingsSingleFileGenerator</Generator>
             <LastGenOutput>Settings.Designer.cs</LastGenOutput>
         </None>
-        <None Include="ThemesOLD\readme.md"/>
+
         <None Include="Themes\readme.md"/>
     </ItemGroup>
     <ItemGroup>
