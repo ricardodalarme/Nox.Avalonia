@@ -1,0 +1,17 @@
+<Styles x:Class="Nox.Avalonia.NoxTheme"
+        xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceInclude x:Key="Default" Source="avares://Nox.Avalonia/Themes/Colours/SoftDark.axaml" />
+                <ResourceInclude x:Key="Dark" Source="avares://Nox.Avalonia/Themes/Colours/SoftDark.axaml" />
+            </ResourceDictionary.ThemeDictionaries>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="avares://Nox.Avalonia/Themes/ControlColours.axaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+
+    <StyleInclude Source="avares://Nox.Avalonia/Themes/Controls.axaml" />
+</Styles>

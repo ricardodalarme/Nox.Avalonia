@@ -10,13 +10,13 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Authors>Ricardo Dalarme, REghZy</Authors>
-        <Description>Modern Dark Theme library for Avalonia UI applications.</Description>
-        <RepositoryUrl>https://github.com/AngryCarrot789/WPFDarkTheme</RepositoryUrl>
-        <PackageProjectUrl>https://github.com/AngryCarrot789/WPFDarkTheme</PackageProjectUrl>
+        <Authors>Ricardo Dalarme</Authors>
+        <Description>Nox - A sleek, modern Dark Theme library for Avalonia UI applications.</Description>
+        <RepositoryUrl>https://github.com/ricardodalarme/Nox.Avalonia</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/ricardodalarme/Nox.Avalonia</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageTags>avalonia;avaloniaui;theme;dark-theme;controls;xaml;ui</PackageTags>
+        <PackageTags>nox;avalonia;avaloniaui;theme;dark-theme;controls;xaml;ui</PackageTags>
     </PropertyGroup>
 
     <ItemGroup>
