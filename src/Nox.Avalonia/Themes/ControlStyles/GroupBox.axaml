@@ -3,6 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:c="clr-namespace:Nox.Avalonia.Themes.Controls"
     xmlns:cv="clr-namespace:Nox.Avalonia.Themes.Converters">
+
     <ControlTheme x:Key="{x:Type c:GroupBox}" TargetType="{x:Type c:GroupBox}">
         <Setter Property="Background" Value="{DynamicResource ABrush.Tone3.Background.Static}" />
         <Setter Property="HeaderBrush" Value="{DynamicResource GroupBox.Header.Static.Background}" />
@@ -10,19 +11,20 @@
         <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="HeaderContentGap" Value="1" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
-        <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="Padding" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="HorizontalHeaderAlignment" Value="Left" />
+        <Setter Property="VerticalHeaderAlignment" Value="Center" />
+        <Setter Property="Padding" Value="4" />
+        <Setter Property="HeaderPadding" Value="5" />
         <Setter Property="Template">
-            <ControlTemplate>
+            <ControlTemplate TargetType="{x:Type c:GroupBox}">
                 <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                     <DockPanel>
-                        <!--  Using a converter for the border thickness saves having an extra border element  -->
-                        <!--  in this template, which helps with performance a tiny bit  -->
                         <Border
                             x:Name="PART_Header"
                             MinHeight="27"
-                            Padding="3,3,3,2"
+                            Padding="{TemplateBinding HeaderPadding}"
                             Background="{TemplateBinding HeaderBrush}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding HeaderContentGap,
@@ -30,22 +32,71 @@
                             DockPanel.Dock="Top">
                             <ContentPresenter
                                 x:Name="PART_HeaderPresenter"
-                                Margin="5,0,5,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
+                                HorizontalAlignment="{TemplateBinding HorizontalHeaderAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalHeaderAlignment}"
                                 Background="Transparent"
                                 BorderBrush="Transparent"
                                 Content="{TemplateBinding Header}"
-                                ContentTemplate="{Binding $parent[Expander].HeaderTemplate}" />
+                                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                FontWeight="SemiBold"
+                                TextElement.Foreground="{DynamicResource GroupBox.Header.Foreground}" />
                         </Border>
                         <Border x:Name="PART_ContentBorder" Background="{TemplateBinding Background}">
                             <ContentPresenter
                                 x:Name="PART_ContentPresenter"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                 Background="Transparent"
                                 BorderBrush="Transparent"
                                 Content="{TemplateBinding Content}"
-                                ContentTemplate="{Binding $parent[Expander].ContentTemplate}" />
+                                ContentTemplate="{TemplateBinding ContentTemplate}" />
                         </Border>
+                    </DockPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+
+    <ControlTheme x:Key="{x:Type HeaderedContentControl}" TargetType="HeaderedContentControl">
+        <Setter Property="Background" Value="{DynamicResource ABrush.Tone3.Background.Static}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource GroupBox.Static.Border}" />
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Top" />
+        <Setter Property="Padding" Value="6" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="HeaderedContentControl">
+                <Border
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}">
+                    <DockPanel>
+                        <Border
+                            x:Name="PART_Header"
+                            MinHeight="27"
+                            Padding="5,2"
+                            Background="{DynamicResource GroupBox.Header.Static.Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0,0,0,1"
+                            DockPanel.Dock="Top">
+                            <ContentPresenter
+                                x:Name="PART_HeaderPresenter"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Content="{TemplateBinding Header}"
+                                ContentTemplate="{TemplateBinding HeaderTemplate}"
+                                FontWeight="SemiBold"
+                                TextElement.Foreground="{DynamicResource GroupBox.Header.Foreground}" />
+                        </Border>
+                        <ContentPresenter
+                            x:Name="PART_ContentPresenter"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}" />
                     </DockPanel>
                 </Border>
             </ControlTemplate>

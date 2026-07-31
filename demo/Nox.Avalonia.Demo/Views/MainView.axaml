@@ -26,11 +26,11 @@
                 <MenuItem Header="Another menuitem" />
                 <MenuItem Header="Another menuitem" />
                 <MenuItem Header="Another menuitem" />
-                <Separator />
+                <Separator Margin="0,5" />
                 <MenuItem Header="A disabled menu item" IsEnabled="False" />
                 <MenuItem Header="Another menuitem" />
                 <MenuItem Header="Another menuitem" />
-                <Separator />
+                <Separator Margin="0,5" />
                 <MenuItem Header="MenuItem with many others">
                     <MenuItem Header="Another MenuItem with many others">
                         <MenuItem Header="MenuItem with many others">
@@ -96,23 +96,11 @@
                 <MenuItem Header="Another menuitem" />
                 <MenuItem Header="Another menuitem" />
             </MenuItem>
-            <MenuItem Header="Themes (TODO)">
-                <MenuItem Header="Avaliable Themes Below" />
+            <MenuItem Header="Themes">
                 <MenuItem
                     Click="ChangeTheme"
-                    DataContext="0"
-                    Header="Deep Dark">
-                    <MenuItem.Icon>
-                        <Rectangle
-                            Fill="#FF1B1B1B"
-                            Stroke="#FF232323"
-                            StrokeThickness="2" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem
-                    Click="ChangeTheme"
-                    DataContext="1"
-                    Header="Soft Dark (default)">
+                    Header="Dark Theme (Default)"
+                    Tag="Dark">
                     <MenuItem.Icon>
                         <Rectangle
                             Fill="#FF2A2A2A"
@@ -122,30 +110,8 @@
                 </MenuItem>
                 <MenuItem
                     Click="ChangeTheme"
-                    DataContext="2"
-                    Header="Dark Grey">
-                    <MenuItem.Icon>
-                        <Rectangle
-                            Fill="#FF4E4E4E"
-                            Stroke="#FF737373"
-                            StrokeThickness="2" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem
-                    Click="ChangeTheme"
-                    DataContext="3"
-                    Header="Grey">
-                    <MenuItem.Icon>
-                        <Rectangle
-                            Fill="#FF797979"
-                            Stroke="#FFB3B3B3"
-                            StrokeThickness="2" />
-                    </MenuItem.Icon>
-                </MenuItem>
-                <MenuItem
-                    Click="ChangeTheme"
-                    DataContext="4"
-                    Header="Light">
+                    Header="Light Theme"
+                    Tag="Light">
                     <MenuItem.Icon>
                         <Rectangle
                             Fill="#FFE8E8E8"
@@ -153,33 +119,22 @@
                             StrokeThickness="2" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem
-                    Click="ChangeTheme"
-                    DataContext="5"
-                    Header="Red">
-                    <MenuItem.Icon>
-                        <Rectangle
-                            Fill="#FFED1C1C"
-                            Stroke="#FFFF1A1A"
-                            StrokeThickness="2" />
-                    </MenuItem.Icon>
-                </MenuItem>
             </MenuItem>
         </Menu>
-        <Grid ColumnDefinitions="400,2,3*,2,4*">
-            <c:GroupBox Margin="0,0,2,0" Header="A GroupBox Here... with things inside">
+        <Grid ColumnDefinitions="3.4*,2,3.4*,2,2.8*">
+            <!--  Group 1: Left Column  -->
+            <c:GroupBox Margin="0,0,2,0" Header="Controls &amp; Navigation">
                 <StackPanel Margin="5" Spacing="5">
                     <Button
-                        Height="50"
+                        Height="40"
                         Command="{Binding AddContentCommand}"
                         Content="A Button Here" />
                     <ToggleButton
-                        Height="40"
+                        Height="36"
                         Content="A toggle button"
                         IsChecked="{Binding ElementName=CheckBox1, Path=IsChecked, Mode=TwoWay}" />
                     <CheckBox x:Name="CheckBox1" Content="A CheckBox Here" />
                     <CheckBox Content="A CheckBox Here" />
-                    <RadioButton Content="A RadioButton Here" />
                     <RadioButton Content="A RadioButton Here" />
                     <RadioButton Content="A RadioButton Here" />
                     <NumericUpDown
@@ -187,91 +142,89 @@
                         Maximum="100"
                         Minimum="0"
                         Value="{Binding NumericValue}" />
-                    <Slider
-                        Maximum="100"
-                        Minimum="0"
-                        Value="16" />
-                    <Slider
-                        Maximum="100"
-                        Minimum="0"
-                        Value="32" />
-                    <Slider
-                        Maximum="100"
-                        Minimum="0"
-                        Value="64" />
-                    <Slider
-                        Maximum="100"
-                        Minimum="0"
-                        Value="100" />
 
+                    <Separator Margin="0,5" />
 
-                    <!--
-                        This DataGrid has explicit columns. The advantage of this is that you can change
-                        the editing element styles, which cannot be automatically styled from my findings (WPF limitation)
-                    -->
-                    <TextBlock
-                        Padding="2,5"
-                        Text="This DataGrids columns are explicity specified, and the editor component styles are explicitly set, meaning if you double click a row in the Name column, it will have a dark theme text box"
-                        TextWrapping="Wrap" />
-                    <DataGrid
-                        Height="118"
-                        AutoGenerateColumns="False"
-                        ItemsSource="{Binding EditorGridViewModel.Items}">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
-                            <DataGridCheckBoxColumn Binding="{Binding IsVisible}" Header="Visibility" />
-                            <DataGridCheckBoxColumn Binding="{Binding IsEnabled}" Header="Is Enabled" />
-                        </DataGrid.Columns>
-                    </DataGrid>
+                    <!--  Expander Showcase  -->
+                    <Expander
+                        Margin="0,4"
+                        Header="Standalone Expander Showcase"
+                        IsExpanded="True">
+                        <StackPanel Margin="5" Spacing="5">
+                            <TextBlock Text="This expander uses the Nox theme!" TextWrapping="Wrap" />
+                            <CheckBox Content="Option inside expander" IsChecked="True" />
+                        </StackPanel>
+                    </Expander>
+
+                    <Separator Margin="0,5" />
+                    <TextBox Height="36" PlaceholderText="Type text here..." />
+                    <Separator Margin="0,5" />
+
+                    <!--  Tabs in Group 1  -->
+                    <TabControl>
+                        <TabItem Header="Tab1">
+                            <TreeView>
+                                <TreeViewItem Header="My shopping list" IsExpanded="True">
+                                    <TreeViewItem Header="Some stuff" />
+                                    <TreeViewItem Header="Juice" />
+                                    <TreeViewItem Header="Iphone 4s" />
+                                </TreeViewItem>
+                                <TreeViewItem Header="extra tree items 1" IsExpanded="True">
+                                    <TreeViewItem Header="extra tree items 2" IsExpanded="True">
+                                        <TreeViewItem Header="extra tree items 3" />
+                                        <TreeViewItem Header="extra tree items 4" />
+                                    </TreeViewItem>
+                                </TreeViewItem>
+                            </TreeView>
+                        </TabItem>
+                        <TabItem Header="Tab2">
+                            <StackPanel Margin="5" Spacing="5">
+                                <Label Content="A Label here" />
+                                <Label Content="Another Label here" />
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem Header="Tab3 eee" />
+                        <TabItem Header="Tab4 eee" />
+                        <TabItem Header="Tab5 eee" />
+                        <TabItem Header="Tab6 eee" />
+                    </TabControl>
                 </StackPanel>
             </c:GroupBox>
+
             <GridSplitter Grid.Column="1" />
+
+            <!--  Group 2: Middle Column  -->
             <c:GroupBox
                 Grid.Column="2"
                 Margin="2,0,3,0"
-                Header="A group box!!">
-                <Grid>
+                Header="Inputs, Lists &amp; DataGrid">
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <StackPanel Margin="5" Spacing="5">
-                        <Label Content="A Label here" />
-                        <Label Content="Another Label here" />
-                        <Separator />
-                        <Label Content="ListVBox below" />
-                        <ListBox Height="200">
-                            <ListBoxItem Content="A listboxitem here" />
-                            <ListBoxItem Content="Another listboxitem here" />
-                            <ListBoxItem Content="1" />
-                            <ListBoxItem Content="2" />
-                            <ListBoxItem Content="3" />
-                            <Grid>
-                                <Label HorizontalAlignment="Left" Content="A button to the right" />
-                                <Button Margin="125,0,0,0" Content="A button" />
-                            </Grid>
-                            <Grid>
-                                <Label HorizontalAlignment="Left" Content="A button to the right" />
-                                <Button Margin="125,0,0,0" Content="A button" />
-                            </Grid>
-                            <Grid>
-                                <Label HorizontalAlignment="Left" Content="A button to the right" />
-                                <Button Margin="125,0,0,0" Content="A button" />
-                            </Grid>
-                        </ListBox>
-                        <Separator Margin="0,10" />
-                        <apc:PropertyGrid Height="340" DataContext="{Binding Settings}" />
-                    </StackPanel>
-                </Grid>
-            </c:GroupBox>
-            <GridSplitter Grid.Column="3" />
-            <c:GroupBox
-                Grid.Column="4"
-                Margin="3,0,0,0"
-                Header="Another group box!!! A list of some controls">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
-                    <StackPanel Margin="5" Spacing="5">
-                        <Button Content="eee" />
+                        <!--  ToolTip Showcase  -->
+                        <Button
+                            Height="32"
+                            Content="Hover for ToolTip"
+                            ToolTip.Tip="This is a Nox popover ToolTip with auto-wrapping text support!" />
+
+                        <!--  ContextFlyout Showcase  -->
+                        <Button Height="32" Content="Right-click for ContextFlyout">
+                            <Button.ContextFlyout>
+                                <MenuFlyout>
+                                    <MenuItem Header="Flyout Item 1" />
+                                    <MenuItem Header="Flyout Item 2" />
+                                    <Separator Margin="0,5" />
+                                    <MenuItem Header="Flyout Submenu">
+                                        <MenuItem Header="Sub Item A" />
+                                        <MenuItem Header="Sub Item B" />
+                                    </MenuItem>
+                                </MenuFlyout>
+                            </Button.ContextFlyout>
+                        </Button>
+
+                        <Separator Margin="0,5" />
+
                         <CheckBox Content="checkbox" />
                         <ComboBox>
-                            <ComboBoxItem Content="A comboboxitem" />
-                            <ComboBoxItem Content="A comboboxitem" />
                             <ComboBoxItem Content="A comboboxitem" />
                             <ComboBoxItem Content="A comboboxitem" />
                             <ComboBoxItem Content="A comboboxitem" />
@@ -292,98 +245,45 @@
                             Maximum="100"
                             Minimum="0"
                             Value="61" />
-                        <TextBox Height="64" />
-                        <TabControl Height="550">
-                            <TabItem Header="Tab1 eee">
-                                <c:GroupBox Header="Things">
-                                    <StackPanel Margin="5" Spacing="5">
-                                        <TreeView Margin="5">
-                                            <TreeViewItem Header="My shopping list">
-                                                <TreeViewItem Header="Some stuff" />
-                                                <TreeViewItem Header="Juice" />
-                                                <TreeViewItem Header="Iphone 4s" />
-                                                <TreeViewItem Header="Microwave" />
-                                            </TreeViewItem>
-                                            <TreeViewItem Header="Reasons to dislike happy hardcore" />
-                                            <TreeViewItem Header="extra tree items 1">
-                                                <TreeViewItem Header="extra tree items 2">
-                                                    <TreeViewItem Header="extra tree items 3">
-                                                        <TreeViewItem Header="extra tree items 4" />
-                                                        <TreeViewItem Header="extra tree items 4" />
-                                                        <TreeViewItem Header="extra tree items 4" />
-                                                        <TreeViewItem Header="extra tree items 4" />
-                                                    </TreeViewItem>
-                                                    <TreeViewItem Header="extra tree items 3" />
-                                                    <TreeViewItem Header="extra tree items 3" />
-                                                </TreeViewItem>
-                                                <TreeViewItem Header="extra tree items 2" />
-                                                <TreeViewItem Header="extra tree items 2" />
-                                                <TreeViewItem Header="extra tree items 2" />
-                                                <TreeViewItem Header="extra tree items 2" />
-                                            </TreeViewItem>
-                                        </TreeView>
-                                        <StackPanel
-                                            Margin="5"
-                                            Orientation="Vertical"
-                                            Spacing="5">
-                                            <Calendar />
-                                            <DatePicker />
-                                        </StackPanel>
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                        <Button Height="32" Content="Button" />
-                                    </StackPanel>
-                                </c:GroupBox>
-                            </TabItem>
-                            <TabItem Header="Tab2 eee">
-                                <StackPanel Margin="5" Spacing="5">
-                                    <Label Content="A Label here" />
-                                    <Label Content="Another Label here" />
-                                    <Separator />
-                                    <Label Content="ListVBox below" />
-                                    <ListBox Height="200" Margin="5,0,5,0">
-                                        <ListBoxItem Content="A listboxitem here" />
-                                        <ListBoxItem Content="Another listboxitem here" />
-                                        <ListBoxItem Content="1" />
-                                        <ListBoxItem Content="2" />
-                                        <ListBoxItem Content="3" />
-                                        <Grid>
-                                            <Label HorizontalAlignment="Left" Content="A button to the right" />
-                                            <Button Margin="125,0,0,0" Content="A button" />
-                                        </Grid>
-                                        <Grid>
-                                            <Label HorizontalAlignment="Left" Content="A button to the right" />
-                                            <Button Margin="125,0,0,0" Content="A button" />
-                                        </Grid>
-                                        <Grid>
-                                            <Label HorizontalAlignment="Left" Content="A button to the right" />
-                                            <Button Margin="125,0,0,0" Content="A button" />
-                                        </Grid>
-                                    </ListBox>
-                                    <Label Content="ListView below" />
-                                </StackPanel>
-                            </TabItem>
-                            <TabItem Header="Tab3 eee" />
-                            <TabItem Header="Tab4 eee" />
-                            <TabItem Header="Tab5 eee" />
-                            <TabItem Header="Tab6 eee" />
-                            <TabItem Header="Tab7 eee" />
-                        </TabControl>
+
+                        <Separator Margin="0,5" />
+
+                        <Label Content="ListBox below" />
+                        <ListBox>
+                            <ListBoxItem Content="A listboxitem here" />
+                            <ListBoxItem Content="Another listboxitem here" />
+                            <ListBoxItem Content="1" />
+                            <ListBoxItem Content="2" />
+                            <ListBoxItem Content="3" />
+                            <Grid>
+                                <Label HorizontalAlignment="Left" Content="A button to the right" />
+                                <Button Margin="125,0,0,0" Content="A button" />
+                            </Grid>
+                        </ListBox>
+
+                        <Separator Margin="0,5" />
+
+                        <TextBlock Text="This DataGrid's columns are explicitly specified with dark/light theme cell styles:" TextWrapping="Wrap" />
+                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding EditorGridViewModel.Items}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Name}" Header="Name" />
+                                <DataGridCheckBoxColumn Binding="{Binding IsVisible}" Header="Visibility" />
+                                <DataGridCheckBoxColumn Binding="{Binding IsEnabled}" Header="Is Enabled" />
+                            </DataGrid.Columns>
+                        </DataGrid>
                     </StackPanel>
                 </ScrollViewer>
             </c:GroupBox>
+
+            <GridSplitter Grid.Column="3" />
+
+            <!--  Group 3: Right Column (Dedicated to Property Grid)  -->
+            <c:GroupBox
+                Grid.Column="4"
+                Margin="3,0,0,0"
+                Header="Property Inspector">
+                <apc:PropertyGrid DataContext="{Binding Settings}" />
+            </c:GroupBox>
         </Grid>
     </DockPanel>
-
 </UserControl>

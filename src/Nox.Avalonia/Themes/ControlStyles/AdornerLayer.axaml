@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTheme x:Key="{x:Type AdornerLayer}" TargetType="AdornerLayer">
+        <Setter Property="DefaultFocusAdorner">
+            <FocusAdornerTemplate>
+                <Rectangle
+                    Margin="1"
+                    Stroke="{DynamicResource ABrush.Glyph.Static}"
+                    StrokeDashArray="2"
+                    StrokeLineCap="Square"
+                    StrokeThickness="1"
+                    UseLayoutRounding="True">
+                    <Rectangle.Styles>
+                        <Style>
+                            <Style.Animations>
+                                <Animation IterationCount="Infinite" Duration="0:0:1">
+                                    <KeyFrame Cue="0%">
+                                        <Setter Property="StrokeDashOffset" Value="0" />
+                                    </KeyFrame>
+                                    <KeyFrame Cue="100%">
+                                        <Setter Property="StrokeDashOffset" Value="4" />
+                                    </KeyFrame>
+                                </Animation>
+                            </Style.Animations>
+                        </Style>
+                    </Rectangle.Styles>
+                </Rectangle>
+            </FocusAdornerTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>

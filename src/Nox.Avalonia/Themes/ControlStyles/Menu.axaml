@@ -94,8 +94,7 @@
         </Style>
 
         <Style Selector="^:disabled">
-            <Setter Property="Background" Value="{DynamicResource MenuItem.Disabled.Background}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource MenuItem.Disabled.Background}" />
+            <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Disabled}" />
         </Style>
     </ControlTheme>
 
@@ -112,6 +111,7 @@
                     CornerRadius="{TemplateBinding CornerRadius}">
                     <ItemsPresenter
                         x:Name="PART_ItemsPresenter"
+                        Grid.IsSharedSizeScope="True"
                         ItemsPanel="{TemplateBinding ItemsPanel}"
                         KeyboardNavigation.TabNavigation="Continue" />
                 </Border>

@@ -8,11 +8,12 @@ public class EditorGridViewModel
 
     public EditorGridViewModel()
     {
-        this.Items = new ObservableCollection<EditorItem>
-        {
-            new EditorItem("Item 1", false, false),
-            new EditorItem("Item 2", false, false),
-            new EditorItem("Item 3", true, true)
-        };
+        this.Items =
+        [
+            new ("Item 1", false, false),
+            new ("Item 2", false, true),
+            new ("Item 3", true, true),
+            new ("Item 4", true, false),
+        ];
     }
 }

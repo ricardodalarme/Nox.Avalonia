@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.Controls.Primitives;
+using Avalonia.Layout;
 using Avalonia.Media;
 
 namespace Nox.Avalonia.Themes.Controls;
@@ -11,7 +12,13 @@ public class GroupBox : HeaderedContentControl
 {
     public static readonly StyledProperty<IBrush> HeaderBrushProperty = AvaloniaProperty.Register<GroupBox, IBrush>("HeaderBrush", Brushes.Transparent);
     public static readonly StyledProperty<double> HeaderContentGapProperty = AvaloniaProperty.Register<GroupBox, double>("HeaderContentGap", 1.0);
+    public static readonly StyledProperty<HorizontalAlignment> HorizontalHeaderAlignmentProperty = AvaloniaProperty.Register<GroupBox, HorizontalAlignment>(nameof(HorizontalHeaderAlignment), HorizontalAlignment.Left);
+    public static readonly StyledProperty<VerticalAlignment> VerticalHeaderAlignmentProperty = AvaloniaProperty.Register<GroupBox, VerticalAlignment>(nameof(VerticalHeaderAlignment), VerticalAlignment.Center);
+    public static readonly StyledProperty<Thickness> HeaderPaddingProperty = AvaloniaProperty.Register<GroupBox, Thickness>(nameof(HeaderPadding));
 
+    /// <summary>
+    /// Gets or sets the background brush of the header element
+    /// </summary>
     public IBrush HeaderBrush
     {
         get => this.GetValue(HeaderBrushProperty);
@@ -24,8 +31,25 @@ public class GroupBox : HeaderedContentControl
         set => this.SetValue(HeaderContentGapProperty, value);
     }
 
+    public HorizontalAlignment HorizontalHeaderAlignment
+    {
+        get => this.GetValue(HorizontalHeaderAlignmentProperty);
+        set => this.SetValue(HorizontalHeaderAlignmentProperty, value);
+    }
+
+    public VerticalAlignment VerticalHeaderAlignment
+    {
+        get => this.GetValue(VerticalHeaderAlignmentProperty);
+        set => this.SetValue(VerticalHeaderAlignmentProperty, value);
+    }
+
+    public Thickness HeaderPadding
+    {
+        get => this.GetValue(HeaderPaddingProperty);
+        set => this.SetValue(HeaderPaddingProperty, value);
+    }
+
     public GroupBox()
     {
-
     }
 }

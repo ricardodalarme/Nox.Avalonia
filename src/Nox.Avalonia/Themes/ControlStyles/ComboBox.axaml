@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Design.PreviewWith>
-        <StackPanel Width="150" Height="200">
+        <StackPanel Width="150" Height="100">
             <Separator />
             <ComboBox>
                 <ComboBoxItem Content="Ello a" />
@@ -26,6 +26,7 @@
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="Padding" Value="1" />
         <Setter Property="MinHeight" Value="20" />
+        <Setter Property="CornerRadius" Value="0" />
         <Setter Property="PlaceholderForeground" Value="{DynamicResource ABrush.Foreground.Static}" />
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
         <Setter Property="Template">
@@ -62,6 +63,7 @@
                             BorderBrush="{Binding ElementName=border, Path=BorderBrush}"
                             BorderThickness="1,0,0,0"
                             ClickMode="Press"
+                            CornerRadius="{TemplateBinding CornerRadius}"
                             Focusable="False"
                             IsChecked="{TemplateBinding IsDropDownOpen,
                                                         Mode=TwoWay}">

@@ -98,4 +98,52 @@
             <Setter Property="BorderBrush" Value="{DynamicResource ToggleButton.Pressed.IsChecked.Border}" />
         </Style>
     </ControlTheme>
+
+    <ControlTheme x:Key="StaticBorderToggleButtonTheme" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Background" Value="{DynamicResource Button.Static.Background}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource Button.Static.Border}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource Button.Static.Foreground}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <ContentPresenter
+                        x:Name="PART_ContentPresenter"
+                        Padding="{TemplateBinding Padding}"
+                        HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Content="{TemplateBinding Content}"
+                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        RecognizesAccessKey="True"
+                        TextElement.Foreground="{TemplateBinding Foreground}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource Button.MouseOver.Background}" />
+        </Style>
+        <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource Button.Pressed.Background}" />
+        </Style>
+        <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource Button.Disabled.Background}" />
+            <Setter Property="TextElement.Foreground" Value="{DynamicResource Button.Disabled.Foreground}" />
+        </Style>
+        <Style Selector="^[IsChecked=True][IsPressed=False] /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ToggleButton.IsChecked.Background}" />
+        </Style>
+        <Style Selector="^[IsChecked=True][IsPressed=true] /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ToggleButton.Pressed.IsChecked.Background}" />
+        </Style>
+        <Style Selector="^:pointerover[IsChecked=True] /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ToggleButton.MouseOver.IsChecked.Background}" />
+        </Style>
+    </ControlTheme>
 </ResourceDictionary>

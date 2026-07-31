@@ -27,11 +27,11 @@
     <ControlTheme x:Key="{x:Type MenuItem}" TargetType="{x:Type MenuItem}">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Padding" Value="6 0" />
+        <Setter Property="Padding" Value="4 0" />
         <Setter Property="Template">
             <ControlTemplate>
                 <Border
-                    x:Name="root"
+                    x:Name="PART_LayoutRoot"
                     Background="{TemplateBinding Background}"
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}"
@@ -39,7 +39,7 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="{StaticResource MenuItemIconTrayGridLength}" />
-                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="2" />
                             <ColumnDefinition Width="*" />
                             <!--  A large amount of padding between the Header and Input Gesture Text  -->
                             <!--  The default simple theme has no padding, and the two blend together  -->
@@ -47,19 +47,26 @@
                             <ColumnDefinition Width="Auto" SharedSizeGroup="MenuItemIGT" />
                             <ColumnDefinition Width="20" />
                         </Grid.ColumnDefinitions>
-                        <ContentControl
-                            x:Name="PART_ToggleIconPresenter"
+                        <Border
+                            x:Name="PART_ToggleBorder"
                             Grid.Column="0"
                             Width="16"
                             Height="16"
-                            Margin="2"
-                            IsVisible="False" />
+                            Margin="4,2,2,2"
+                            BorderBrush="{DynamicResource PanelBorderBrush}"
+                            BorderThickness="1"
+                            IsVisible="False">
+                            <ContentControl
+                                x:Name="PART_ToggleIconPresenter"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                        </Border>
                         <ContentControl
                             x:Name="PART_IconPresenter"
                             Grid.Column="0"
                             Width="16"
                             Height="16"
-                            Margin="2"
+                            Margin="4,2,2,2"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Content="{TemplateBinding Icon}" />
@@ -80,7 +87,7 @@
                             x:Name="PART_InputGestureText"
                             Grid.Column="4"
                             VerticalAlignment="Center"
-                            Foreground="{DynamicResource ABrush.Foreground.Disabled}"
+                            Foreground="{DynamicResource ABrush.Foreground.Deeper}"
                             Text="{TemplateBinding InputGesture,
                                                    Converter={StaticResource KeyGestureConverter}}" />
                         <Path
@@ -108,6 +115,7 @@
                                         Background="{DynamicResource MenuItem.IconBar.Static.Background}"
                                         BorderBrush="{DynamicResource MenuItem.IconBar.Static.Border}"
                                         BorderThickness="0,0,1,0" />
+
                                     <ScrollViewer Theme="{StaticResource SimpleMenuScrollViewer}">
                                         <ItemsPresenter
                                             x:Name="PART_ItemsPresenter"
@@ -130,12 +138,12 @@
             </Setter>
         </Style>
 
-        <Style Selector="^:pointerover /template/ Border#root">
+        <Style Selector="^:pointerover /template/ Border#PART_LayoutRoot">
             <Setter Property="Background" Value="{DynamicResource MenuItem.MouseOver.Background}" />
             <Setter Property="BorderBrush" Value="{DynamicResource MenuItem.MouseOver.Background}" />
         </Style>
 
-        <Style Selector="^:selected /template/ Border#root">
+        <Style Selector="^:selected /template/ Border#PART_LayoutRoot">
             <Setter Property="Background" Value="{DynamicResource MenuItem.MouseOver.Background}" />
             <Setter Property="BorderBrush" Value="{DynamicResource MenuItem.MouseOver.Background}" />
         </Style>
@@ -145,15 +153,17 @@
         </Style>
 
         <Style Selector="^:disabled">
-            <Setter Property="Background" Value="{DynamicResource MenuItem.Disabled.Background}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource MenuItem.Disabled.Background}" />
+            <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Disabled}" />
         </Style>
 
-        <Style Selector="^:toggle /template/ Viewbox#PART_ToggleIconPresenter, ^:radio /template/ Viewbox#PART_ToggleIconPresenter">
+        <Style Selector="^:toggle /template/ Border#PART_ToggleBorder, ^:radio /template/ Border#PART_ToggleBorder">
             <Setter Property="IsVisible" Value="True" />
         </Style>
         <Style Selector="^:toggle /template/ ContentPresenter#PART_IconPresenter, ^:radio /template/ ContentPresenter#PART_IconPresenter">
             <Setter Property="IsVisible" Value="False" />
+        </Style>
+        <Style Selector="^:toggle, ^:radio">
+            <Setter Property="StaysOpenOnClick" Value="True" />
         </Style>
         <Style Selector="^:checked:toggle /template/ ContentControl#PART_ToggleIconPresenter">
             <Setter Property="Content">
