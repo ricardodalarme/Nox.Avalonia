@@ -19,5 +19,6 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\Nox.Avalonia\Nox.Avalonia.csproj" />
+        <ProjectReference Include="..\..\src\Nox.Avalonia.DataGrid\Nox.Avalonia.DataGrid.csproj" />
     </ItemGroup>
 </Project>

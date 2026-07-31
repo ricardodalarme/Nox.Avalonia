@@ -12,4 +12,5 @@
         <File Path="src/Directory.Build.props" />
     </Folder>
     <Project Path="src/Nox.Avalonia/Nox.Avalonia.csproj" />
+    <Project Path="src/Nox.Avalonia.DataGrid/Nox.Avalonia.DataGrid.csproj" />
 </Solution>

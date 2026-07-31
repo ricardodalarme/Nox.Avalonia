@@ -1,9 +1,11 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:nox="clr-namespace:Nox.Avalonia;assembly=Nox.Avalonia"
+             xmlns:noxdg="clr-namespace:Nox.Avalonia.DataGrid;assembly=Nox.Avalonia.DataGrid"
              x:Class="Nox.Avalonia.Demo.App"
              RequestedThemeVariant="Dark">
     <Application.Styles>
         <nox:NoxTheme />
+        <noxdg:NoxDataGridTheme />
     </Application.Styles>
 </Application>

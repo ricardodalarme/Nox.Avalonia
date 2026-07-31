@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ControlTheme x:Key="{x:Type DataGridColumnHeader}" TargetType="DataGridColumnHeader">
+        <Setter Property="Background" Value="{DynamicResource DataGrid.HeaderItem.Static.Background}" />
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="8,4" />
+        <Setter Property="MinHeight" Value="28" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="DataGridColumnHeader">
+                <Border Name="HeaderBorder"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                    <Grid Name="PART_ColumnHeaderRoot" ColumnDefinitions="*,Auto,Auto">
+                        <Panel Grid.Column="0" Margin="{TemplateBinding Padding}">
+                            <Grid HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                  ColumnDefinitions="*,Auto">
+                                <ContentPresenter Grid.Column="0"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}" />
+                                <PathIcon Name="SortIcon"
+                                          Grid.Column="1"
+                                          Width="12" Height="12"
+                                          Margin="4,0,0,0"
+                                          IsVisible="False" />
+                            </Grid>
+                        </Panel>
+                        <Rectangle Name="PART_RightGridLine"
+                                   Grid.Column="2"
+                                   Width="1"
+                                   Fill="{DynamicResource DataGrid.VerticalSeparatorBrush}" />
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+        <Style Selector="^:pointerover">
+            <Setter Property="Background" Value="{DynamicResource DataGrid.HeaderItem.MouseOver.Background}" />
+        </Style>
+        <Style Selector="^:pressed">
+            <Setter Property="Background" Value="{DynamicResource DataGrid.HeaderItem.MouseDown.Background}" />
+        </Style>
+    </ControlTheme>
+</ResourceDictionary>
