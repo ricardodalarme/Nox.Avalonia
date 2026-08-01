@@ -1,0 +1,285 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--  CommandBarButton Theme  -->
+    <ControlTheme x:Key="{x:Type CommandBarButton}" TargetType="CommandBarButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
+        <Setter Property="Padding" Value="6,4" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="CommandBarButton">
+                <Border
+                    x:Name="PART_Border"
+                    Padding="{TemplateBinding Padding}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+                    <StackPanel
+                        x:Name="PART_Panel"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Vertical"
+                        Spacing="2">
+                        <ContentPresenter
+                            x:Name="PART_Icon"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="{TemplateBinding Icon}" />
+                        <TextBlock
+                            x:Name="PART_Label"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="11"
+                            Text="{TemplateBinding Label}" />
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+
+        <!--  Hover State  -->
+        <Style Selector="^:pointerover /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource Button.MouseOver.Background}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Button.MouseOver.Border}" />
+        </Style>
+        <!--  Pressed State  -->
+        <Style Selector="^:pressed /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource Button.Pressed.Background}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Button.Pressed.Border}" />
+        </Style>
+        <!--  Disabled State  -->
+        <Style Selector="^:disabled /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource Button.Disabled.Background}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Button.Disabled.Border}" />
+        </Style>
+
+        <!--  LabelPosition = Right  -->
+        <Style Selector="^[LabelPosition=Right] /template/ StackPanel#PART_Panel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Spacing" Value="6" />
+        </Style>
+        <!--  LabelPosition = Collapsed or IsCompact=True  -->
+        <Style Selector="^[LabelPosition=Collapsed] /template/ TextBlock#PART_Label, ^[IsCompact=True] /template/ TextBlock#PART_Label">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+
+        <!--  IsInOverflow = True  -->
+        <Style Selector="^[IsInOverflow=True]">
+            <Setter Property="Padding" Value="8,6" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+        </Style>
+        <Style Selector="^[IsInOverflow=True] /template/ StackPanel#PART_Panel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Spacing" Value="8" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+    </ControlTheme>
+
+    <!--  CommandBarToggleButton Theme  -->
+    <ControlTheme x:Key="{x:Type CommandBarToggleButton}" TargetType="CommandBarToggleButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
+        <Setter Property="Padding" Value="6,4" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="CommandBarToggleButton">
+                <Border
+                    x:Name="PART_Border"
+                    Padding="{TemplateBinding Padding}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+                    <StackPanel
+                        x:Name="PART_Panel"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Vertical"
+                        Spacing="2">
+                        <ContentPresenter
+                            x:Name="PART_Icon"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Content="{TemplateBinding Icon}" />
+                        <TextBlock
+                            x:Name="PART_Label"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="11"
+                            Text="{TemplateBinding Label}" />
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+
+        <!--  Hover State  -->
+        <Style Selector="^:pointerover /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource Button.MouseOver.Background}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Button.MouseOver.Border}" />
+        </Style>
+        <!--  Pressed State  -->
+        <Style Selector="^:pressed /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource Button.Pressed.Background}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Button.Pressed.Border}" />
+        </Style>
+        <!--  Disabled State  -->
+        <Style Selector="^:disabled /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource Button.Disabled.Background}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource Button.Disabled.Border}" />
+        </Style>
+
+        <!--  Checked State  -->
+        <Style Selector="^[IsChecked=True] /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource ToggleButton.IsChecked.Background}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource ToggleButton.IsChecked.Border}" />
+        </Style>
+        <Style Selector="^[IsChecked=True]:pointerover /template/ Border#PART_Border">
+            <Setter Property="Background" Value="{DynamicResource ToggleButton.MouseOver.IsChecked.Background}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource ToggleButton.MouseOver.IsChecked.Border}" />
+        </Style>
+
+        <!--  LabelPosition = Right  -->
+        <Style Selector="^[LabelPosition=Right] /template/ StackPanel#PART_Panel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Spacing" Value="6" />
+        </Style>
+        <!--  LabelPosition = Collapsed or IsCompact=True  -->
+        <Style Selector="^[LabelPosition=Collapsed] /template/ TextBlock#PART_Label, ^[IsCompact=True] /template/ TextBlock#PART_Label">
+            <Setter Property="IsVisible" Value="False" />
+        </Style>
+
+        <!--  IsInOverflow = True  -->
+        <Style Selector="^[IsInOverflow=True]">
+            <Setter Property="Padding" Value="8,6" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+        </Style>
+        <Style Selector="^[IsInOverflow=True] /template/ StackPanel#PART_Panel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="Spacing" Value="8" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+    </ControlTheme>
+
+    <!--  CommandBarSeparator Theme  -->
+    <ControlTheme x:Key="{x:Type CommandBarSeparator}" TargetType="CommandBarSeparator">
+        <Setter Property="Margin" Value="2,4" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="CommandBarSeparator">
+                <Border
+                    x:Name="PART_Separator"
+                    Width="1"
+                    Margin="2,4"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    Background="{DynamicResource Separator.Static.Background}" />
+            </ControlTemplate>
+        </Setter>
+
+        <!--  IsInOverflow = True  -->
+        <Style Selector="^[IsInOverflow=True]">
+            <Setter Property="Margin" Value="4,2" />
+        </Style>
+        <Style Selector="^[IsInOverflow=True] /template/ Border#PART_Separator">
+            <Setter Property="Width" Value="NaN" />
+            <Setter Property="Height" Value="1" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+    </ControlTheme>
+
+    <!--  CommandBar Theme  -->
+    <ControlTheme x:Key="{x:Type CommandBar}" TargetType="CommandBar">
+        <Setter Property="Background" Value="{DynamicResource ABrush.Tone3.Background.Static}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource GroupBox.Static.Border}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Foreground" Value="{DynamicResource ABrush.Foreground.Static}" />
+        <Setter Property="Padding" Value="4,2" />
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="Template">
+            <ControlTemplate TargetType="CommandBar">
+                <Border
+                    Padding="{TemplateBinding Padding}"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="{TemplateBinding CornerRadius}">
+                    <Grid ColumnDefinitions="Auto,*,Auto">
+                        <!--  Custom Content  -->
+                        <ContentPresenter
+                            x:Name="PART_ContentPresenter"
+                            Grid.Column="0"
+                            Margin="0,0,4,0"
+                            VerticalAlignment="Center"
+                            Content="{TemplateBinding Content}" />
+
+                        <!--  Primary Commands Panel  -->
+                        <ItemsControl
+                            x:Name="PART_PrimaryItemsControl"
+                            Grid.Column="1"
+                            ItemsSource="{Binding VisiblePrimaryCommands, RelativeSource={RelativeSource TemplatedParent}}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel
+                                        VerticalAlignment="Center"
+                                        Orientation="Horizontal"
+                                        Spacing="2" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </ItemsControl>
+
+                        <!--  Overflow Section  -->
+                        <StackPanel
+                            Grid.Column="2"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <ToggleButton
+                                x:Name="PART_OverflowButton"
+                                Margin="2,0,0,0"
+                                Padding="6,4"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                IsChecked="{TemplateBinding IsOpen,
+                                                            Mode=TwoWay}"
+                                IsVisible="{Binding IsOverflowButtonVisible, RelativeSource={RelativeSource TemplatedParent}}">
+                                <PathIcon
+                                    Width="16"
+                                    Height="16"
+                                    Data="M 12,6 A 2,2 0 1,1 12,10 A 2,2 0 1,1 12,6 Z M 12,11 A 2,2 0 1,1 12,15 A 2,2 0 1,1 12,11 Z M 12,16 A 2,2 0 1,1 12,20 A 2,2 0 1,1 12,16 Z"
+                                    Foreground="{DynamicResource ABrush.Glyph.Static}" />
+                            </ToggleButton>
+
+                            <Popup
+                                x:Name="PART_OverflowPopup"
+                                IsLightDismissEnabled="{Binding !IsSticky, RelativeSource={RelativeSource TemplatedParent}}"
+                                IsOpen="{TemplateBinding IsOpen,
+                                                         Mode=TwoWay}"
+                                Placement="BottomEdgeAlignedRight"
+                                PlacementTarget="{Binding ElementName=PART_OverflowButton}">
+                                <Border
+                                    Margin="0,4,0,0"
+                                    Padding="2"
+                                    Background="{DynamicResource ListBox.Static.Background}"
+                                    BorderBrush="{DynamicResource ListBox.Static.Border}"
+                                    BorderThickness="1">
+                                    <ItemsControl x:Name="PART_OverflowItemsControl" ItemsSource="{Binding OverflowItems, RelativeSource={RelativeSource TemplatedParent}}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Vertical" Spacing="2" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                    </ItemsControl>
+                                </Border>
+                            </Popup>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </ControlTheme>
+</ResourceDictionary>
