@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  build:
+    name: Build & Verify
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore Solution
+        run: dotnet restore Nox.slnx
+
+      - name: Build Solution (Release)
+        run: dotnet build Nox.slnx -c Release --no-restore
+
+      - name: Verify NuGet Packaging
+        run: dotnet pack Nox.slnx -c Release --no-build -o ./artifacts/nupkgs
