@@ -2,9 +2,6 @@
 
 <p align="center">
     <a href="https://www.nuget.org/packages/Nox.Avalonia"><img src="https://img.shields.io/nuget/v/Nox.Avalonia?color=1f72de" alt="Nuget Core"></a>
-    <a href="https://www.nuget.org/packages/Nox.Avalonia.Dock"><img src="https://img.shields.io/nuget/v/Nox.Avalonia.Dock?color=1f72de" alt="Nuget Dock"></a>
-    <a href="https://www.nuget.org/packages/Nox.Avalonia.PropertyGrid"><img src="https://img.shields.io/nuget/v/Nox.Avalonia.PropertyGrid?color=1f72de" alt="Nuget PropertyGrid"></a>
-    <a href="https://www.nuget.org/packages/Nox.Avalonia.DataGrid"><img src="https://img.shields.io/nuget/v/Nox.Avalonia.DataGrid?color=1f72de" alt="Nuget DataGrid"></a>
     <img src="https://img.shields.io/badge/-%2010.0-blueviolet?color=1f72de&label=NET" alt=".NET 10">
     <img src="https://img.shields.io/badge/-12.0-blueviolet?label=Avalonia" alt="Avalonia 12">
     <img src="https://img.shields.io/github/license/ricardodalarme/Nox.Avalonia" alt="License">

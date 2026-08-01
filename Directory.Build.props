@@ -1,10 +1,19 @@
 <Project>
   <PropertyGroup>
     <!-- Versioning & Ownership -->
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>Ricardo Dalarme</Authors>
     <Company>Nox</Company>
     <Copyright>Copyright (c) 2026 Ricardo Dalarme</Copyright>
+
+    <!-- Language & Compiler Settings -->
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
 
     <!-- Licensing & Repository Links -->
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
