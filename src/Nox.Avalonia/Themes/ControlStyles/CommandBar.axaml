@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--  CommandBarButton Theme  -->
     <ControlTheme x:Key="{x:Type CommandBarButton}" TargetType="CommandBarButton">
@@ -238,27 +238,24 @@
                             Grid.Column="2"
                             VerticalAlignment="Center"
                             Orientation="Horizontal">
-                            <ToggleButton
+                            <Button
                                 x:Name="PART_OverflowButton"
                                 Margin="2,0,0,0"
                                 Padding="6,4"
                                 Background="Transparent"
                                 BorderBrush="Transparent"
-                                IsChecked="{TemplateBinding IsOpen,
-                                                            Mode=TwoWay}"
                                 IsVisible="{Binding IsOverflowButtonVisible, RelativeSource={RelativeSource TemplatedParent}}">
                                 <PathIcon
                                     Width="16"
                                     Height="16"
                                     Data="M 12,6 A 2,2 0 1,1 12,10 A 2,2 0 1,1 12,6 Z M 12,11 A 2,2 0 1,1 12,15 A 2,2 0 1,1 12,11 Z M 12,16 A 2,2 0 1,1 12,20 A 2,2 0 1,1 12,16 Z"
                                     Foreground="{DynamicResource ABrush.Glyph.Static}" />
-                            </ToggleButton>
+                            </Button>
 
                             <Popup
                                 x:Name="PART_OverflowPopup"
                                 IsLightDismissEnabled="{Binding !IsSticky, RelativeSource={RelativeSource TemplatedParent}}"
-                                IsOpen="{TemplateBinding IsOpen,
-                                                         Mode=TwoWay}"
+                                IsOpen="{Binding IsOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
                                 Placement="BottomEdgeAlignedRight"
                                 PlacementTarget="{Binding ElementName=PART_OverflowButton}">
                                 <Border
@@ -267,7 +264,7 @@
                                     Background="{DynamicResource ListBox.Static.Background}"
                                     BorderBrush="{DynamicResource ListBox.Static.Border}"
                                     BorderThickness="1">
-                                    <ItemsControl x:Name="PART_OverflowItemsControl" ItemsSource="{Binding OverflowItems, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <ItemsControl x:Name="PART_OverflowPresenter" ItemsSource="{Binding OverflowItems, RelativeSource={RelativeSource TemplatedParent}}">
                                         <ItemsControl.ItemsPanel>
                                             <ItemsPanelTemplate>
                                                 <StackPanel Orientation="Vertical" Spacing="2" />
