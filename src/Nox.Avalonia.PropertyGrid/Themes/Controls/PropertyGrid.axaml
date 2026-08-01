@@ -1,4 +1,4 @@
-<Styles
+﻿<Styles
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:pgc="clr-namespace:Avalonia.PropertyGrid.Controls;assembly=Avalonia.PropertyGrid">
@@ -30,6 +30,13 @@
         <Setter Property="CornerRadius" Value="0" />
         <Setter Property="Height" Value="26" />
         <Setter Property="MinHeight" Value="26" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style Selector="pgc|PropertyGrid Button#OptionsButton, pgc|PropertyGrid Button#PART_OptionsButton, pgc|PropertyGrid Grid#InternalHeaderGrid &gt; Button">
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Height" Value="26" />
+        <Setter Property="Width" Value="26" />
         <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 
