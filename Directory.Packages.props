@@ -13,7 +13,7 @@
 
     <!-- Demo Application dependencies -->
     <PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
-    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="12.1.0" />
+    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="12.1.2" />
     <PackageVersion Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.3" />
 
     <!-- Dock dependencies -->
