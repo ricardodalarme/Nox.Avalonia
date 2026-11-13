@@ -2,7 +2,7 @@
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <AvaloniaVersion>12.1.4</AvaloniaVersion>
-    <DockVersion>12.1.0.13</DockVersion>
+    <DockVersion>12.1.5</DockVersion>
   </PropertyGroup>
 
   <ItemGroup>
